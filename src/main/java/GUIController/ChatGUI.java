@@ -93,12 +93,15 @@ public class ChatGUI {
         }
     }
 
-    public void goToChats(MouseEvent mouseEvent) {
+    public void goToChats(MouseEvent mouseEvent) throws IOException {
+        sceneChanger.changeScene(mouseEvent,"Chats.fxml");
     }
 
     public void openFile(MouseEvent mouseEvent) throws IOException {
-        Client.getInstance().setCurrentFile(Integer.parseInt(messagesListView.getSelectionModel().getSelectedItem().split("\n")[0].split(" ")[1]));
-        sceneChanger.changeScene(mouseEvent,"ShowContent.fxml");
+        if(Client.getInstance().getChatController().getFiles().keySet().contains(Integer.parseInt(messagesListView.getSelectionModel().getSelectedItem().split("\n")[0].split(" ")[1]))) {
+            Client.getInstance().setCurrentFile(Integer.parseInt(messagesListView.getSelectionModel().getSelectedItem().split("\n")[0].split(" ")[1]));
+            sceneChanger.changeScene(mouseEvent, "ShowContent.fxml");
+        }
     }
 
     public void attach(DragEvent dragEvent) {

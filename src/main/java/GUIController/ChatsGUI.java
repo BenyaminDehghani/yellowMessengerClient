@@ -1,5 +1,6 @@
 package GUIController;
 
+import APIs.ImageSender;
 import APIs.SceneChanger;
 import client.Client;
 import javafx.fxml.FXML;
@@ -42,7 +43,13 @@ public class ChatsGUI {
             String imageUrl = (String) response.getData().get("pictureUrl");
             String contactName = (String) response.getData().get("name");
             List<String> messages = (List<String>) response.getData().get("messages");
-            HashMap<Integer,byte[]> files = (HashMap<Integer, byte[]>) response.getData().get("files");
+            List<String> filesList = (List<String>) response.getData().get("files");
+            System.out.println(messages.toString());
+            System.out.println(filesList.toString());
+            HashMap<Integer,byte[]> files = new HashMap<>();
+            for (String file:filesList){
+                files.put(Integer.parseInt(file.split(" ")[0]), ImageSender.decode(file.split(" ")[1]));
+            }
             Client.getInstance().setChatController(new ChatController(imageUrl,contactName,messages,files));
             sceneChanger.changeScene(mouseEvent,"Chat.fxml");
         }

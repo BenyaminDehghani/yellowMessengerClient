@@ -111,7 +111,7 @@ public class ServerController {
     }
 
     public Response sendImageMessageRequest(String text, String content) throws UnknownHostException {
-        Request request = new Request(RequestType.SEND_IMAGE_MESSAGE);
+        Request request = new Request(RequestType.SEND_MEDIA_MESSAGE);
         request.addData("text",text);
         request.addData("receiver",Client.getInstance().getChatController().getContactName().split("\n")[1].strip());
         request.addData("content", content);
