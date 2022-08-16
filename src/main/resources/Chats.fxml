@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController.ChatsGUI">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#feff1f" height="600.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+      <ImageView fx:id="contactsButton" fitHeight="50.0" fitWidth="50.0" layoutX="175.0" layoutY="536.0" onMouseClicked="#goToContacts">
+         <image>
+            <Image url="@icons/Contacts.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="170.0" layoutY="14.0" text="Chats">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ListView fx:id="chatsListView" layoutX="2.0" layoutY="64.0" onMouseClicked="#goToChat" prefHeight="459.0" prefWidth="394.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController.ShowContentGUI">
+   <children>
+      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="213.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="576.0" onMouseClicked="#goToChat">
+         <image>
+            <Image url="@icons/Return.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
